@@ -1,8 +1,9 @@
+$("#networkInfo").text("Make sure you are connected to Rinkeby testnet!");
+
 //checks if any web is defined
 if (typeof web3 !== "undefined") {
   // sets current provider as a pweb3 provider
   web3.setProvider(new Web3(web3.currentProvider));
-
   //gets and initializes account information with network
   web3.eth.getAccounts(function (err, accounts) {
     if (err != null) {
