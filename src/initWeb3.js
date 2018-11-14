@@ -11,7 +11,6 @@ if (typeof web3 !== "undefined") {
     } else if (accounts.length == 0) {
       $("#accountStatus").text("Please log in your Metamask Account");
     } else {
-      $("#accountStatus").text(getNetworkInfo(web3.version.network));
       $("#accountAddress").text(accounts[0]);
       
       web3.eth.getBalance(accounts[0], (err, balance) => {

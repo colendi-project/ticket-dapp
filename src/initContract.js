@@ -51,6 +51,7 @@ function buyTicket(ticketId, ticketPrice) {
       } else {
         $("#trxAlert").removeClass("alert-success");
         $("#trxAlert").addClass("alert-danger");
+        $("#trxStatus").removeAttr("href", "https://rinkeby.etherscan.io/tx/" + res);
         $("#trxStatus").text(err.message);
       }
     }
