@@ -1,11 +1,8 @@
 const HDWalletProvider = require("truffle-hdwallet-provider-privkey");
 
-const walletAddr = process.env.WALLET_ADDRESS;
-const privateKey = process.env.WALLET_PRIVATE_KEY;
-const infuraURLKovan = process.env.INFURA_URL_KOVAN;
-const infuraKeyKovan = process.env.INFURA_KEY_KOVAN;
-const infuraURLRinkeby = process.env.INFURA_URL_RINKEBY;
-const infuraKeyRinkeby = process.env.INFURA_KEY_RINKEBY;
+const privateKey = "702947CF023F70686F956310D960C69AE2BD2025B6626D2F0F8004C28662D62E";
+const infuraURLRinkeby = "https://rinkeby.infura.io/v3/";
+const infuraKeyRinkeby = "d950f1c0d6a54ce68d39c2c272cb40f9";
 
 module.exports = {
     networks: {
@@ -19,13 +16,6 @@ module.exports = {
                 return new HDWalletProvider(privateKey, (infuraURLRinkeby+infuraKeyRinkeby));
             },
             network_id: 4
-        },
-        kovan: {
-          provider: () => {
-                return new HDWalletProvider(privateKey, (infuraURLKovan+infuraKeyKovan));
-
-          },
-          network_id: 42
-        } 
+        }
     }
 };
