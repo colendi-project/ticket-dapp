@@ -24,7 +24,7 @@ contractInstance.getTicketsLength.call({}, function(err, ticketCount) {
 
           //dynamic ticket
           if (i > 2) {
-            $("#dynamic-ticket").append('<div class="card mb-4 shadow-sm"><div class="card-header"><h4 id="ticket-title-" class="my-0 font-weight-normal">'+ticketInfo[0]+'</h4></div><div class="card-body"><h1 class="card-title pricing-card-title"><span id="ticket-price-">'+price+'</span> ETH </h1><ul class="list-unstyled mt-3 mb-4"><li>Available: <span id="ticket-available">'+ticketInfo[2]+'</span></li></ul><button id="ticket-buy type="button"class="btn btn-lg btn-block btn-outline-dark">Buy ticket</button></div></div>');
+            $("#dynamic-ticket").append('<div class="card mb-4 shadow-sm"><div class="card-header"><h4 id="ticket-title-" class="my-0 font-weight-normal">'+ticketInfo[0]+'</h4></div><div class="card-body"><h1 class="card-title pricing-card-title"><span id="ticket-price-">'+price+'</span> ETH </h1><ul class="list-unstyled mt-3 mb-4"><li>Available: <span id="ticket-available">'+ticketInfo[2]+'</span></li></ul><button id="ticket-buy type="button" class="btn btn-lg btn-block btn-outline-dark">Buy ticket</button></div></div>');
           }
 
         } else {
@@ -46,7 +46,7 @@ function buyTicket(ticketId, ticketPrice) {
       if (!err) {
         $("#trxAlert").removeClass("alert-danger");
         $("#trxAlert").addClass("alert-success");
-        $("a").attr("href", "https://rinkeby.etherscan.io/tx/" + res);
+        $("#trxStatus").attr("href", "https://rinkeby.etherscan.io/tx/" + res);
         $("#trxStatus").text(res);
       } else {
         $("#trxAlert").removeClass("alert-success");
